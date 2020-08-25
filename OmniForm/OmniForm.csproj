@@ -21,4 +21,8 @@
     <ProjectReference Include="..\OmniForm.Service\OmniForm.Service.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Account\" />
+  </ItemGroup>
+
 </Project>
