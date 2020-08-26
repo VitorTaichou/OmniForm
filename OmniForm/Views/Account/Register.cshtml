@@ -8,20 +8,20 @@
     //CEP Validation
     function limpa_formulário_cep() {
         //Limpa valores do formulário de cep.
-        document.getElementById('rua').value = ("");
-        document.getElementById('bairro').value = ("");
-        document.getElementById('cidade').value = ("");
-        document.getElementById('uf').value = ("");
+        document.getElementById('Street').value = ("");
+        document.getElementById('Neighborhood').value = ("");
+        document.getElementById('City').value = ("");
+        document.getElementById('State').value = ("");
         document.getElementById('ibge').value = ("");
     }
 
     function meu_callback(conteudo) {
         if (!("erro" in conteudo)) {
             //Atualiza os campos com os valores.
-            document.getElementById('rua').value = (conteudo.logradouro);
-            document.getElementById('bairro').value = (conteudo.bairro);
-            document.getElementById('cidade').value = (conteudo.localidade);
-            document.getElementById('uf').value = (conteudo.uf);
+            document.getElementById('Street').value = (conteudo.logradouro);
+            document.getElementById('Neighborhood').value = (conteudo.bairro);
+            document.getElementById('City').value = (conteudo.localidade);
+            document.getElementById('State').value = (conteudo.uf);
             document.getElementById('ibge').value = (conteudo.ibge);
         } //end if.
         else {
@@ -46,10 +46,10 @@
             if (validacep.test(cep)) {
 
                 //Preenche os campos com "..." enquanto consulta webservice.
-                document.getElementById('rua').value = "...";
-                document.getElementById('bairro').value = "...";
-                document.getElementById('cidade').value = "...";
-                document.getElementById('uf').value = "...";
+                document.getElementById('Street').value = "...";
+                document.getElementById('Neighborhood').value = "...";
+                document.getElementById('City').value = "...";
+                document.getElementById('State').value = "...";
                 document.getElementById('ibge').value = "...";
 
                 //Cria um elemento javascript.
@@ -163,12 +163,12 @@
             </div>
             <div class="form-group">
                 <label asp-for="Cep" class="control-label"></label>
-                <input name="cep" id="cep" onblur="pesquisacep(this.value);" asp-for="Cep" class="form-control" />
+                <input onblur="pesquisacep(this.value);" asp-for="Cep" class="form-control" />
                 <span asp-validation-for="Cep" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Street" class="control-label"></label>
-                <input name="rua" id="rua" asp-for="Street" class="form-control" />
+                <input asp-for="Street" class="form-control" />
                 <span asp-validation-for="Street" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -178,7 +178,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Neighborhood" class="control-label"></label>
-                <input name="bairro" id="bairro" asp-for="Neighborhood" class="form-control" />
+                <input asp-for="Neighborhood" class="form-control" />
                 <span asp-validation-for="Neighborhood" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -188,12 +188,12 @@
             </div>
             <div class="form-group">
                 <label asp-for="City" class="control-label"></label>
-                <input name="cidade" id="cidade" asp-for="City" class="form-control" />
+                <input asp-for="City" class="form-control" />
                 <span asp-validation-for="City" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="State" class="control-label"></label>
-                <input name="uf" id="uf" asp-for="State" class="form-control" />
+                <input asp-for="State" class="form-control" />
                 <span asp-validation-for="State" class="text-danger"></span>
             </div>
             <div class="form-group">

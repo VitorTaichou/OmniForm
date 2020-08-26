@@ -1,0 +1,12 @@
+C:\workspace\OmniForm\OmniForm.Service\bin\Release\netcoreapp3.1\OmniForm.Service.deps.json
+C:\workspace\OmniForm\OmniForm.Service\bin\Release\netcoreapp3.1\OmniForm.Service.dll
+C:\workspace\OmniForm\OmniForm.Service\bin\Release\netcoreapp3.1\OmniForm.Service.pdb
+C:\workspace\OmniForm\OmniForm.Service\bin\Release\netcoreapp3.1\OmniForm.Data.dll
+C:\workspace\OmniForm\OmniForm.Service\bin\Release\netcoreapp3.1\OmniForm.Data.pdb
+C:\workspace\OmniForm\OmniForm.Service\obj\Release\netcoreapp3.1\OmniForm.Service.csprojAssemblyReference.cache
+C:\workspace\OmniForm\OmniForm.Service\obj\Release\netcoreapp3.1\OmniForm.Service.AssemblyInfoInputs.cache
+C:\workspace\OmniForm\OmniForm.Service\obj\Release\netcoreapp3.1\OmniForm.Service.AssemblyInfo.cs
+C:\workspace\OmniForm\OmniForm.Service\obj\Release\netcoreapp3.1\OmniForm.Service.csproj.CoreCompileInputs.cache
+C:\workspace\OmniForm\OmniForm.Service\obj\Release\netcoreapp3.1\OmniForm.Service.csproj.CopyComplete
+C:\workspace\OmniForm\OmniForm.Service\obj\Release\netcoreapp3.1\OmniForm.Service.dll
+C:\workspace\OmniForm\OmniForm.Service\obj\Release\netcoreapp3.1\OmniForm.Service.pdb
