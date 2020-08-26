@@ -256,10 +256,10 @@ namespace OmniForm.Data.Migrations
                     b.Property<string>("Complement")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Cpg")
+                    b.Property<string>("Cpf")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("FullName")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(max)");
 
@@ -280,9 +280,6 @@ namespace OmniForm.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Street")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Surname")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasDiscriminator().HasValue("CustomerUser");

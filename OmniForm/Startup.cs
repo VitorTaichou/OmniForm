@@ -24,16 +24,16 @@ namespace OmniForm
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();
             services.AddMvc(options =>
             {
-                //var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
-                //options.Filters.Add(new AuthorizeFilter(policy));
+                var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
+                options.Filters.Add(new AuthorizeFilter(policy));
             });
 
             services.AddIdentity<CustomerUser, IdentityRole>(options =>
             {
-                options.Password.RequiredLength = 3;
+                options.Password.RequiredLength = 5;
                 options.Password.RequiredUniqueChars = 1;
                 options.Password.RequireUppercase = false;
                 options.Password.RequireNonAlphanumeric = false;
@@ -57,12 +57,22 @@ namespace OmniForm
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+            //Migrating Database
+            using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+            {
+                var context = serviceScope.ServiceProvider.GetRequiredService<OmniFormContext>();
+                context.Database.Migrate();
+            }
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseAuthentication();
 
             app.UseEndpoints(endpoints =>
             {
