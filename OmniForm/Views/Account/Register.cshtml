@@ -1,7 +1,7 @@
 ﻿@model OmniForm.Models.Account.CustomerUserViewModel
 
 @{
-    ViewData["Title"] = "Register";
+    ViewData["Title"] = "Cadastro";
 }
 
 <script>
@@ -128,110 +128,126 @@
     }
 </script>
 
-<h1>Register</h1>
+<h1 class="text-white">Cadastro</h1>
+<form asp-action="Register">
+    <div asp-validation-summary="All" class="text-white"></div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card h-100">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Informações Pessoais</h5>
+                    <div class="form-group">
+                        <label asp-for="FullName" class="control-label"></label>
+                        <input asp-for="FullName" class="form-control" />
+                    </div>
+                    <div class="row">
+                        <div class="form-group col pr-2">
+                            <label asp-for="Cpf" class="control-label"></label>
+                            <input id="cpf" onblur="cpfLogic()" asp-for="Cpf" class="form-control" />
+                        </div>
+                        <div class="form-group col pl-2">
+                            <label asp-for="Rg" class="control-label"></label>
+                            <input asp-for="Rg" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Sex" class="control-label"></label>
+                        <select asp-for="Sex" class="form-control">
+                            <option value="M">Masculino</option>
+                            <option value="F">Feminino</option>
+                            <option value="O">Outro</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Birthday" class="control-label"></label>
+                        <input asp-for="Birthday" type="date" asp-format="{0:yyyy-MM-dd}" class="form-control" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Endereço</h5>
+                    <div class="form-group">
+                        <label asp-for="Cep" class="control-label"></label>
+                        <input onblur="pesquisacep(this.value);" asp-for="Cep" class="form-control" />
+                    </div>
+                    <div class="row">
+                        <div class="form-group col pr-2">
+                            <label asp-for="Street" class="control-label"></label>
+                            <input asp-for="Street" class="form-control" />
+                        </div>
+                        <div class="form-group col pl-2">
+                            <label asp-for="Number" class="control-label"></label>
+                            <input asp-for="Number" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col pr-2">
+                            <label asp-for="Neighborhood" class="control-label"></label>
+                            <input asp-for="Neighborhood" class="form-control" />
+                        </div>
+                        <div class="form-group col pl-2">
+                            <label asp-for="Complement" class="control-label"></label>
+                            <input asp-for="Complement" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col pr-2">
+                            <label asp-for="City" class="control-label"></label>
+                            <input asp-for="City" class="form-control" />
+                        </div>
+                        <div class="form-group col pl-2">
+                            <label asp-for="State" class="control-label"></label>
+                            <input asp-for="State" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Contato e Credenciais</h5>
+                    <div class="row">
+                        <div class="form-group col pr-2">
+                            <label asp-for="PhoneNumber1" class="control-label"></label>
+                            <input asp-for="PhoneNumber1" class="form-control" />
+                        </div>
+                        <div class="form-group col pl-2">
+                            <label asp-for="PhoneNumber2" class="control-label"></label>
+                            <input asp-for="PhoneNumber2" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col">
+                            <label asp-for="Email" class="control-label"></label>
+                            <input asp-for="Email" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col pr-2">
+                            <label asp-for="Password" class="control-label"></label>
+                            <input asp-for="Password" class="form-control" />
 
-<h4>CustomerUserViewModel</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Register">
-            <div asp-validation-summary="All" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="FullName" class="control-label"></label>
-                <input asp-for="FullName" class="form-control" />
-                <span asp-validation-for="FullName" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col pl-2">
+                            <label asp-for="ConfirmPassword" class="control-label"></label>
+                            <input asp-for="ConfirmPassword" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <input id="ibge" name="ibge" hidden class="form-control" />
+                        <div class="form-group col">
+                            <input id="submitBtn" type="submit" value="Cadastrar" class="btn btn-lg btn-success mt-3 w-100" />
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Cpf" class="control-label"></label>
-                <input id="cpf" onblur="cpfLogic()" asp-for="Cpf" class="form-control" />
-                <span id="cpfError" asp-validation-for="Cpf" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Rg" class="control-label"></label>
-                <input asp-for="Rg" class="form-control" />
-                <span asp-validation-for="Rg" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Sex" class="control-label"></label>
-                <input asp-for="Sex" class="form-control" />
-                <span asp-validation-for="Sex" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Birthday" class="control-label"></label>
-                <input asp-for="Birthday" class="form-control" />
-                <span asp-validation-for="Birthday" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Cep" class="control-label"></label>
-                <input onblur="pesquisacep(this.value);" asp-for="Cep" class="form-control" />
-                <span asp-validation-for="Cep" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Street" class="control-label"></label>
-                <input asp-for="Street" class="form-control" />
-                <span asp-validation-for="Street" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Number" class="control-label"></label>
-                <input asp-for="Number" class="form-control" />
-                <span asp-validation-for="Number" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Neighborhood" class="control-label"></label>
-                <input asp-for="Neighborhood" class="form-control" />
-                <span asp-validation-for="Neighborhood" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Complement" class="control-label"></label>
-                <input asp-for="Complement" class="form-control" />
-                <span asp-validation-for="Complement" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="City" class="control-label"></label>
-                <input asp-for="City" class="form-control" />
-                <span asp-validation-for="City" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="State" class="control-label"></label>
-                <input asp-for="State" class="form-control" />
-                <span asp-validation-for="State" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PhoneNumber1" class="control-label"></label>
-                <input asp-for="PhoneNumber1" class="form-control" />
-                <span asp-validation-for="PhoneNumber1" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PhoneNumber2" class="control-label"></label>
-                <input asp-for="PhoneNumber2" class="form-control" />
-                <span asp-validation-for="PhoneNumber2" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Password" class="control-label"></label>
-                <input asp-for="Password" class="form-control" />
-                <span asp-validation-for="Password" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ConfirmPassword" class="control-label"></label>
-                <input asp-for="ConfirmPassword" class="form-control" />
-                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input id="submitBtn" type="submit" value="Create" class="btn btn-primary" />
-            </div>
-            <input id="ibge" name="ibge" hidden class="form-control" />
-        </form>
+        </div>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+</form>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

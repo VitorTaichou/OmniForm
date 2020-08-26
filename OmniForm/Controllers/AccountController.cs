@@ -80,20 +80,11 @@ namespace OmniForm.Controllers
                     await signInManager.SignInAsync(user, isPersistent: false);
                     return RedirectToAction("Index", "Home");
                 }
-                else
-                {
-                    //Error while creating a user!
-                    foreach(var error in result.Errors)
-                    {
-                        ModelState.AddModelError("", error.Description);
-                    }
-                }
             }
             
             return View(model);
         }
 
-        [HttpPost]
         [AllowAnonymous]
         public async Task<IActionResult> Logout()
         {

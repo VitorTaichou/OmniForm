@@ -1,8 +1,43 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@inject SignInManager<OmniForm.Data.Model.CustomerUser> signInManager;
+@inject UserManager<OmniForm.Data.Model.CustomerUser> userManager;
+@{
+    ViewData["Title"] = "Início";
+    var CurrentUser = await userManager.FindByNameAsync(User.Identity.Name);
+    string NormalName = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(CurrentUser.FullName.ToLower());
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container">
+    <div class="row">
+        <div class="col text-center">
+            <h1 class="display-1 text-white">OmniForms</h1>
+            <h3 class="text-white-50 font-weight-light">
+                Acesso a todos os nossos serviços, com apenas um cadastro
+            </h3>
+        </div>
+    </div>
+    <div class="row mt-lg-5">
+        <div class="col text-center text-white">
+            @if (!signInManager.IsSignedIn(User))
+            {
+                <h5>
+                    Realize seu
+                    <a asp-action="Register" asp-controller="Account" class="btn-link">
+                        CADASTRO
+                    </a>
+                    agora!
+                </h5>
+                <h5>
+                    Já possui cadastro? Então
+                    <a asp-action="Login" asp-controller="Account" class="btn-link">
+                        CLIQUE AQUI
+                    </a>
+                    para realizar o Login!
+                </h5>
+            }
+            else
+            {
+                <h5>Olá @NormalName</h5>
+            }
+        </div>
+    </div>
 </div>
