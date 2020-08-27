@@ -1,0 +1,16 @@
+Questionário presente no final do documento Desafio SE_SEE:
+
+1. A solução deve ser disponibilizada em Cloud ou On-premise?
+r: Deve ser disponibilizada em Cloud, para que possa facilitar o acesso do cliente na plataforma.
+
+2. Considerando a participação de 4 pessoas técnicas para o desenvolvimento dessa solução, responda qual ferramenta acreditas ser apropriada para o controle de tarefas da equipe, a ferramenta é ágil?
+r: Um simples Kanban utilizando o Trello, dividindo os cards em Sprints já é apropriado para controlar as atividades. Sim, é ágil.
+
+3. Você se sente capaz de liderar esta equipe? Por quê?
+r: Sim, por ter domínio das tecnologias utilizadas e por ter entendimento do problema e da solução.
+
+4. Se pudesse sugerir uma melhoria, mudança ou oportunidade. O que seria?
+r: Caso o cadastro seja utilizado também para conter informações bancárias, deve-se ter mais verificações de segurança tanto no banco de dados, quanto nas chamadas de API.
+
+5. Acha válido esse desafio para o processo que está participando?
+r: Sim, pois este teste mostra um problema real do cotidiano de um Software Engineer.
