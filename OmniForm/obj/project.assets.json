@@ -2990,19 +2990,6 @@
         "runtime": {
           "bin/placeholder/OmniForm.Data.dll": {}
         }
-      },
-      "OmniForm.Service/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "dependencies": {
-          "OmniForm.Data": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/OmniForm.Service.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/OmniForm.Service.dll": {}
-        }
       }
     }
   },
@@ -9340,11 +9327,6 @@
       "type": "project",
       "path": "../OmniForm.Data/OmniForm.Data.csproj",
       "msbuildProject": "../OmniForm.Data/OmniForm.Data.csproj"
-    },
-    "OmniForm.Service/1.0.0": {
-      "type": "project",
-      "path": "../OmniForm.Service/OmniForm.Service.csproj",
-      "msbuildProject": "../OmniForm.Service/OmniForm.Service.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -9357,13 +9339,13 @@
       "Microsoft.EntityFrameworkCore.Tools >= 3.1.7",
       "Microsoft.Extensions.Identity.Core >= 3.1.7",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.4",
-      "OmniForm.Data >= 1.0.0",
-      "OmniForm.Service >= 1.0.0"
+      "OmniForm.Data >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\vitor\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
@@ -9371,14 +9353,15 @@
       "projectUniqueName": "C:\\workspace\\OmniForm\\OmniForm\\OmniForm.csproj",
       "projectName": "OmniForm",
       "projectPath": "C:\\workspace\\OmniForm\\OmniForm\\OmniForm.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\vitor\\.nuget\\packages\\",
       "outputPath": "C:\\workspace\\OmniForm\\OmniForm\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Microsoft\\Xamarin\\NuGet\\",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\vitor\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -9394,9 +9377,6 @@
           "projectReferences": {
             "C:\\workspace\\OmniForm\\OmniForm.Data\\OmniForm.Data.csproj": {
               "projectPath": "C:\\workspace\\OmniForm\\OmniForm.Data\\OmniForm.Data.csproj"
-            },
-            "C:\\workspace\\OmniForm\\OmniForm.Service\\OmniForm.Service.csproj": {
-              "projectPath": "C:\\workspace\\OmniForm\\OmniForm.Service\\OmniForm.Service.csproj"
             }
           }
         }
@@ -9463,7 +9443,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
       }
     }
   }

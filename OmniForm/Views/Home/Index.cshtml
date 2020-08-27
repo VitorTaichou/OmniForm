@@ -2,16 +2,24 @@
 @inject UserManager<OmniForm.Data.Model.CustomerUser> userManager;
 @{
     ViewData["Title"] = "Início";
-    var CurrentUser = await userManager.FindByNameAsync(User.Identity.Name);
-    string NormalName = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(CurrentUser.FullName.ToLower());
+
+    string NormalName = "";
+    var CurrentUser = new OmniForm.Data.Model.CustomerUser();
+    if (signInManager.IsSignedIn(User))
+    {
+        //CurrentUser = await userManager.FindByNameAsync(User.Identity.Name);
+        CurrentUser = await userManager.Users.Where(u => u.Email == User.Identity.Name).Include(u => u.PhoneNumbers).FirstAsync();
+        NormalName = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(CurrentUser.FullName.ToLower());
+    }
+
 }
 
 <div class="container">
     <div class="row">
         <div class="col text-center">
-            <h1 class="display-1 text-white">OmniForms</h1>
+            <h1 class="display-1 text-white"><span style="color:#6dbcff">Bemol</span> <span style="color:#ff7878">Registro</span></h1>
             <h3 class="text-white-50 font-weight-light">
-                Acesso a todos os nossos serviços, com apenas um cadastro
+                Acesso a todos os nossos serviços, com apenas um Registro!
             </h3>
         </div>
     </div>
@@ -36,7 +44,48 @@
             }
             else
             {
-                <h5>Olá @NormalName</h5>
+                <div class="card text-dark text-left">
+                    <div class="card-body">
+                        <div class="row">
+                            <h5 class="col text-center">Estas são suas Informações cadastradas no sistema:</h5>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <dl>
+                                    <dt>Nome Completo</dt>
+                                    <dd>@CurrentUser.FullName</dd>
+                                    <dt>CPF</dt>
+                                    <dd>@CurrentUser.Cpf</dd>
+                                    <dt>RG</dt>
+                                    <dd>@CurrentUser.Rg</dd>
+                                    <dt>Sexo</dt>
+                                    <dd>@CurrentUser.Sex</dd>
+                                    <dt>Data de Nascimento</dt>
+                                    <dd>@CurrentUser.Birthday.ToShortDateString()</dd>
+                                </dl>
+                            </div>
+                            <div class="col">
+                                <dl>
+                                    <dt>Endereço</dt>
+                                    <dd>@CurrentUser.Street, @CurrentUser.Number, @CurrentUser.Neighborhood</dd>
+                                    <dt>Localidade</dt>
+                                    <dd>@CurrentUser.City, @CurrentUser.State</dd>
+                                    <dt>CEP</dt>
+                                    <dd>@CurrentUser.Cep</dd>
+                                    <dt>Telefone</dt>
+                                    <div class="row">
+                                        @foreach (var phone in CurrentUser.PhoneNumbers)
+                                        {
+                                            <dd class="col">@phone.Number</dd>
+                                        }
+                                    </div>
+                                    <dt>E-Mail</dt>
+                                    <dd>@CurrentUser.Email</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             }
         </div>
     </div>

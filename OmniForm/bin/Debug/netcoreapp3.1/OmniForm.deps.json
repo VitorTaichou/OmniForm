@@ -10,7 +10,7 @@
       "NETCOREAPP",
       "NETCOREAPP3_1"
     ],
-    "languageVersion": "8.0",
+    "languageVersion": "",
     "platform": "",
     "allowUnsafe": false,
     "warningsAsErrors": false,
@@ -33,7 +33,6 @@
           "Microsoft.Extensions.Identity.Core": "3.1.7",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.1.4",
           "OmniForm.Data": "1.0.0",
-          "OmniForm.Service": "1.0.0",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions.Reference": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies.Reference": "3.1.0.0",
@@ -2468,17 +2467,6 @@
         },
         "compile": {
           "OmniForm.Data.dll": {}
-        }
-      },
-      "OmniForm.Service/1.0.0": {
-        "dependencies": {
-          "OmniForm.Data": "1.0.0"
-        },
-        "runtime": {
-          "OmniForm.Service.dll": {}
-        },
-        "compile": {
-          "OmniForm.Service.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/3.1.0.0": {
@@ -5397,11 +5385,6 @@
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
     },
     "OmniForm.Data/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "OmniForm.Service/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

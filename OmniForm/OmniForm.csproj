@@ -21,7 +21,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\OmniForm.Data\OmniForm.Data.csproj" />
-    <ProjectReference Include="..\OmniForm.Service\OmniForm.Service.csproj" />
   </ItemGroup>
 
 </Project>

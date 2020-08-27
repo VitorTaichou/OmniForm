@@ -75,9 +75,7 @@ C:\workspace\OmniForm\OmniForm\bin\Debug\netcoreapp3.1\OmniForm.pdb
 C:\workspace\OmniForm\OmniForm\bin\Debug\netcoreapp3.1\OmniForm.Views.dll
 C:\workspace\OmniForm\OmniForm\bin\Debug\netcoreapp3.1\OmniForm.Views.pdb
 C:\workspace\OmniForm\OmniForm\bin\Debug\netcoreapp3.1\OmniForm.Data.dll
-C:\workspace\OmniForm\OmniForm\bin\Debug\netcoreapp3.1\OmniForm.Service.dll
 C:\workspace\OmniForm\OmniForm\bin\Debug\netcoreapp3.1\OmniForm.Data.pdb
-C:\workspace\OmniForm\OmniForm\bin\Debug\netcoreapp3.1\OmniForm.Service.pdb
 C:\workspace\OmniForm\OmniForm\obj\Debug\netcoreapp3.1\OmniForm.Views.pdb
 C:\workspace\OmniForm\OmniForm\obj\Debug\netcoreapp3.1\OmniForm.dll
 C:\workspace\OmniForm\OmniForm\obj\Debug\netcoreapp3.1\OmniForm.pdb
