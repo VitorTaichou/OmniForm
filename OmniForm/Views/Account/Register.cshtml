@@ -61,11 +61,14 @@
                 //Insere script no documento e carrega o conteúdo.
                 document.body.appendChild(script);
 
+                document.getElementById("Cep").classList.remove('border-danger');
+                document.getElementById("submitBtn").disabled = false;
             } //end if.
             else {
                 //cep é inválido.
                 limpa_formulário_cep();
-                alert("Formato de CEP inválido.");
+                document.getElementById("Cep").classList.add('border-danger');
+                document.getElementById("submitBtn").disabled = true;
             }
         } //end if.
         else {
