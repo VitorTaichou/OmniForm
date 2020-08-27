@@ -80,6 +80,21 @@ namespace OmniForm.Controllers
                     await signInManager.SignInAsync(user, isPersistent: false);
                     return RedirectToAction("Index", "Home");
                 }
+                else
+                {
+                    foreach (var error in result.Errors)
+                    {
+                        if(error.Code.Equals("DuplicateUserName"))
+                        {
+                            ModelState.AddModelError(string.Empty, "E-mail já registrado no sistema!");
+                        }
+                        else
+                        {
+                            ModelState.AddModelError(string.Empty, error.Description);
+                        }
+                        
+                    }
+                }
             }
             
             return View(model);
