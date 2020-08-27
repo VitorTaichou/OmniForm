@@ -35,3 +35,4 @@ Desafio Etapa 2 Software Engineer.
 * Caso queira desconectar sua conta, basta clicar em **Sair** na barra de navegação.
 * Quando nenhum usuário está conectado, a opção **Login** aparece no topo da página, permitindo fazer login com uma conta já cadastrada, utilizando e-mail e senha.
 * O nome inicial do sistema era OmniForm, mas para se encaixar melhor nos produtos da Bemol, o nome da aplicação foi mudado para **Bemol Registro**.
+* Os diagramas de Design da Solução, Design Arquitetura e o .txt contendo a resposta das questões do documento do Desafio da Segunda Etapa podem ser encontrados na pasta [Arquivos](https://github.com/VitorTaichou/OmniForm/tree/master/Arquivos) na raiz do repositório.
